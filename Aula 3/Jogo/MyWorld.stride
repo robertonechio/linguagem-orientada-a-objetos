@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="MyWorld" extends="World" extends-java="World" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve">Constructor for objects of class MyWorld.</javadoc>
+            <params/>
+            <throws/>
+            <delegate target="super" params="600,400,1" params-java="600, 400, 1"/>
+            <body>
+                <call expression="prepare()" expression-java="prepare()" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="private" type="void" type-java="void" name="prepare" enable="true">
+            <javadoc xml:space="preserve">Prepara o mundo para o início do programa.
+Ou seja: criar os objetos iniciais e adicioná-los ao mundo.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="Personagem1" type-java="Personagem1" name="personagem1" value="new Personagem1()" value-java=" new Personagem1()" enable="true"/>
+                <call expression="addObject(personagem1,59,203)" expression-java="addObject(personagem1, 59, 203)" enable="true"/>
+                <call expression="personagem1.getWorld()" expression-java="personagem1.getWorld()" enable="true"/>
+                <variable type="Bomba" type-java="Bomba" name="bomba" value="new Bomba()" value-java=" new Bomba()" enable="true"/>
+                <call expression="addObject(bomba,10,10)" expression-java="addObject(bomba, 10, 10)" enable="true"/>
+                <while condition="true" condition-java="true" enable="false">
+                    <call expression="bomba.setLocation(bomba.getX()+5,bomba.getY())" expression-java="bomba.setLocation(bomba.getX() + 5, bomba.getY())" enable="false"/>
+                </while>
+            </body>
+        </method>
+    </methods>
+</class>
