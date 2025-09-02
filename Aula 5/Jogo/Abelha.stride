@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Abelha" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="private" type="int" type-java="int" name="tipoAbelha" value="Greenfoot.getRandomNumber(2)" value-java="Greenfoot.getRandomNumber(2)" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="velocidade" value="2" value-java="2" enable="true"/>
+    </fields>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Bomba wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="tipoAbelha==0" condition-java="tipoAbelha == 0" enable="true">
+                    <ifStatements>
+                        <if condition="getX()&gt;=599" condition-java="getX() &gt;= 599" enable="true">
+                            <ifStatements>
+                                <call expression="setLocation(0,Greenfoot.getRandomNumber(599))" expression-java="setLocation(0, Greenfoot.getRandomNumber(599))" enable="true"/>
+                            </ifStatements>
+                            <else>
+                                <call expression="setLocation(getX()+velocidade,getY())" expression-java="setLocation(getX() + velocidade, getY())" enable="true"/>
+                            </else>
+                        </if>
+                    </ifStatements>
+                </if>
+                <if condition="tipoAbelha==1" condition-java="tipoAbelha == 1" enable="true">
+                    <ifStatements>
+                        <if condition="getY()&gt;=399" condition-java="getY() &gt;= 399" enable="true">
+                            <ifStatements>
+                                <call expression="setLocation(Greenfoot.getRandomNumber(399),0)" expression-java="setLocation(Greenfoot.getRandomNumber(399), 0)" enable="true"/>
+                            </ifStatements>
+                            <else>
+                                <call expression="setLocation(getX(),getY()+velocidade)" expression-java="setLocation(getX(), getY() + velocidade)" enable="true"/>
+                            </else>
+                        </if>
+                        <if condition="getRotation()==0" condition-java="getRotation() == 0" enable="true">
+                            <ifStatements>
+                                <call expression="turn(90)" expression-java="turn(90)" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+                <if condition="isTouching(Personagem1.class)" condition-java="isTouching(Personagem1.class)" enable="true">
+                    <ifStatements>
+                        <if condition="tipoAbelha==0" condition-java="tipoAbelha == 0" enable="true">
+                            <ifStatements>
+                                <call expression="setLocation(0,Greenfoot.getRandomNumber(599))" expression-java="setLocation(0, Greenfoot.getRandomNumber(599))" enable="true"/>
+                            </ifStatements>
+                        </if>
+                        <if condition="tipoAbelha==1" condition-java="tipoAbelha == 1" enable="true">
+                            <ifStatements>
+                                <call expression="setLocation(Greenfoot.getRandomNumber(399),0)" expression-java="setLocation(Greenfoot.getRandomNumber(399), 0)" enable="true"/>
+                            </ifStatements>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>

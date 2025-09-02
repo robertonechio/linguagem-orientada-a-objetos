@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Morango" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Morango wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="isTouching(Personagem1.class)" condition-java="isTouching(Personagem1.class)" enable="true">
+                    <ifStatements>
+                        <call expression="setLocation(Greenfoot.getRandomNumber(599),Greenfoot.getRandomNumber(399))" expression-java="setLocation(Greenfoot.getRandomNumber(599), Greenfoot.getRandomNumber(399))" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>
